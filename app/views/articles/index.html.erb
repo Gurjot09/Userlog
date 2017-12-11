@@ -1,0 +1,62 @@
+
+
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<body style= "background-color:#daf1eb;">
+<div style="font-family:verdana;  
+   
+    background-color: #efe1ff;
+    text-color:black;
+    padding: 10px;">
+
+
+<h1 style="text-align:center"><mark> All Articles</mark></h1>
+
+<%=link_to 'New Article' , new_article_path%>
+<%=link_to 'Your Articles' ,articles_your_articles_path%>
+
+<table>
+  <tr>
+     <th>Title</th>
+      <th>Text</th>
+      <th>Likes</th>
+      
+</tr> 
+
+
+<% @articles.each do |article|%>
+<tr>
+ <td> <%= article.title %> </td>
+ <td> <%= article.text %> </td>
+ 
+
+
+  <%@id=article.id%>
+  <td><%=link_to Like.where(article_id: @id).count%></td>
+  
+
+ <td> <%= link_to "Show", article_path(article)%></td>
+
+
+</tr>
+<%end%>
+</table>
+</div>
+</body>

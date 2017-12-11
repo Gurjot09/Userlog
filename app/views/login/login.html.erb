@@ -1,0 +1,38 @@
+
+<body style= "background-color:#daf1eb;">
+
+
+<div style="font-family:verdana;  
+   
+    background-color: #efe1ff;
+    text-color:black;
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 15px;
+    border-style:outset;
+    padding: 20px;
+
+">
+<h1 style=" text-align:center"> <mark>Log In Page</mark></h1>
+<hr>
+<%= form_for :login ,url: login_index_path  do |f|%>
+<p style="text-align:left; ">
+ <%=f.label :email %><br>
+ <%=f.text_field :email %>
+</p style="text-align:left; ">
+<p style="text-align:left; ">
+ <%=f.label :password %><br>
+ <%=f.text_field :password %><br>
+</p>
+
+<p style="text-align:left; ">
+ <%=f.submit :LogIn %>
+ </p>
+
+<%=link_to 'Sign Up', new_user_path%>
+
+<%end%>
+</div>
+</body>

@@ -1,0 +1,40 @@
+
+<body style= "background-color:#daf1eb;">
+
+<div style="font-family:verdana;  
+   
+    background-color: #efe1ff;
+    text-color:black;
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 15px;
+    border-style:outset;
+    padding: 20px;
+">
+  <%= form_for :user, url: users_path  do |f|%>
+<h1 style=" text-align:center"> <mark> Add Your Details</mark></h1>
+  <hr>
+        
+  <p style="text-align:left; ">
+    <%=f.label :Name %><br>
+    <%=f.text_field :name%>
+  </p>
+<p style="text-align:left ">
+    <%=f.label :Email %><br>
+    <%=f.text_field :email%>
+  </p>
+
+<p style="text-align:left">
+    <%=f.label :pasword %><br>
+    <%=f.text_field :password%>
+  </p>
+
+<p style="text-align:left">
+    <%=f.submit :Submit %>
+     </p>
+
+<%end%>
+</div>
+</body>>

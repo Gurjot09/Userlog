@@ -1,0 +1,55 @@
+
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<body style= "background-color:#daf1eb;">
+<h1 style="text-align:center"><mark> Your Articles</mark></h1><br>
+
+<%=link_to 'New Article' , new_article_path%>
+<%=link_to 'Back' , articles_path%>
+
+
+<div style="font-family:verdana;  
+   
+    background-color: #efe1ff;
+    text-color:black;
+    padding: 20px;">
+
+<table>
+  <tr>
+     <th>Title</th>
+      <th>Text</th>
+</tr> 
+
+
+<% @user_articles.each do |article|%>
+<tr>
+ <td> <%= article.title %> </td>
+ <td> <%= article.text %> </td>
+ <td> <%= link_to "Show", article_path(article)%></td>
+<td> <%= link_to "Edit", edit_article_path(article)%></td>
+<td> <%= link_to "Delete", article_path(article) , method: :delete ,
+                              data:{confirm: "Are You Sure"}                %></td>
+
+</tr>
+<%end%>
+</table>
+</div>
+
+</body>
